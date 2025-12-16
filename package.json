@@ -1,0 +1,13 @@
+{
+  "name": "myokoyamapen-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "postcss ./src/css/style.css -o ./dist/output.css --watch",
+    "build": "postcss ./src/css/style.css -o ./dist/output.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
