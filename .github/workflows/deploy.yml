@@ -13,14 +13,12 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Deploy to XServer via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Deploy to XServer via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          username: ${{ secrets.FTP_USER }}
           server: ${{ secrets.FTP_HOST }}
-          port: 22
-          local_path: './*'
-          remote_path: '/xs927202.xsrv.jp/public_html/'
-          sftp_only: true
+          username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          delete_remote_files: false
+          server-dir: /xs927202.xsrv.jp/public_html/
+          protocol: ftp
+          port: 21
